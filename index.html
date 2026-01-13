@@ -1,1 +1,214 @@
-<h1>Hello, I am [Name]</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ilya Lotarev | Researcher</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:opsz@8..144&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #1a0a2e;
+        --text: #f6f2e8;
+        --muted: rgba(246, 242, 232, 0.72);
+        --accent: #c4ff00;
+        --border: rgba(196, 255, 0, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at top, #2a1146, var(--bg));
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Instrument Serif", "Times New Roman", serif;
+        letter-spacing: 0.5px;
+      }
+
+      header {
+        padding: 72px 24px 56px;
+      }
+
+      .container {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        display: grid;
+        gap: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 5vw, 3.8rem);
+        margin: 0;
+      }
+
+      .hero p {
+        margin: 0;
+        font-size: 1.05rem;
+        color: var(--muted);
+      }
+
+      .tagline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .tag {
+        border-radius: 999px;
+        padding: 8px 16px;
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-size: 0.95rem;
+        background: rgba(26, 10, 46, 0.6);
+        box-shadow: 0 0 12px rgba(196, 255, 0, 0.15);
+      }
+
+      .glow {
+        color: var(--accent);
+        text-shadow: 0 0 18px rgba(196, 255, 0, 0.6);
+      }
+
+      main {
+        padding: 32px 24px 72px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        padding: 24px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: rgba(18, 6, 32, 0.7);
+        box-shadow: 0 12px 30px rgba(10, 2, 22, 0.5);
+        backdrop-filter: blur(8px);
+      }
+
+      .card h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        padding: 24px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container hero" data-motion="fade">
+        <p class="tag glow">Researcher · Student</p>
+        <h1>Ilya Lotarev</h1>
+        <p>
+          I build and study software on the open web, focusing on how thoughtful
+          engineering can make information and collaboration easier.
+        </p>
+        <div class="tagline">
+          <span class="tag">Open-source development</span>
+          <span class="tag">Web technology</span>
+          <span class="tag">Applied research</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container grid">
+        <section class="card" data-motion="lift">
+          <h2>About</h2>
+          <p>
+            I am a student and independent researcher sharing my work through my
+            GitHub Pages site. My studies emphasize building reliable digital
+            tools and communicating research clearly.
+          </p>
+        </section>
+        <section class="card" data-motion="lift">
+          <h2>Research Focus</h2>
+          <ul>
+            <li>Designing practical software systems for real-world users.</li>
+            <li>Experimenting with data-driven prototypes and web experiences.</li>
+            <li>Documenting findings to make research reusable.</li>
+          </ul>
+        </section>
+        <section class="card" data-motion="lift">
+          <h2>Projects &amp; Notes</h2>
+          <p>
+            I publish work-in-progress ideas, code experiments, and summaries of
+            what I am learning. You can follow the latest updates on my GitHub
+            profile.
+          </p>
+          <p><a href="https://github.com/">Visit GitHub →</a></p>
+        </section>
+        <section class="card" data-motion="lift">
+          <h2>Contact</h2>
+          <p>
+            If you would like to collaborate, feel free to reach out through
+            GitHub issues or pull requests.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">© 2024 Ilya Lotarev · GitHub Pages</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.18.0/dist/framer-motion.umd.js"></script>
+    <script>
+      const { animate, stagger } = window.Motion;
+
+      const fadeIn = (selector, options = {}) => {
+        const elements = document.querySelectorAll(selector);
+        animate(
+          elements,
+          { opacity: [0, 1], y: [16, 0] },
+          {
+            duration: 0.7,
+            easing: "ease-out",
+            delay: stagger(0.12),
+            ...options,
+          }
+        );
+      };
+
+      fadeIn("[data-motion='fade'] > *");
+      fadeIn("[data-motion='lift']", { delay: stagger(0.08) });
+    </script>
+  </body>
+</html>
